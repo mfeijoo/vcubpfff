@@ -1,0 +1,90 @@
+﻿HEADER
+Header Length,85
+Export file version,2.0
+
+
+Export settings:
+Normalise,Yes
+For TPS,No
+Smoothing level,None
+
+Units:
+length,[cm]
+amperage,[pA]
+
+Project:
+Project,Micro Diamond SN 124596 Annual  QA
+Project run number,3
+Project run note,
+
+Irradiation unit:
+Name,VCU MRIdian
+Manufacturer,ViewRay
+Model,MRIdian
+Source-isocentre distance,90,[cm]
+
+Thales:
+Control unit UID,00-3B-00-43-4B-56-50-11-20-37-30-53
+Electrometer UID,00-4E-00-36-58-4B-50-0D-20-34-34-41
+Water phantom UID,4A-B3-52-04-00-00-00-0A
+
+Field detector:
+Serial number,124596
+Manufacturer,PTW
+Model,Micro Diamond
+Bias voltage,0,[V]
+
+Reference detector:
+Serial number,XMC213192
+Manufacturer,Standard Imaging
+Model,A28MR Ref
+Bias voltage,-300,[V]
+
+Zeroing offsets:
+Field detector,106.414,[pA]
+Reference detector,16.073,[pA]
+
+Profile settings:
+Measurement mode,Continuous
+Creation time,2023-01-29T17:07:37.7638735-05:00
+SSD,80,[cm]
+Gantry angle,0,[°]
+Field size crossline,27.2,[cm]
+Field size inline,24.07,[cm]
+Beam quality,6,[MV]
+Flattening Filter,FFF
+Time to wait prior to sampling,0,[s]
+
+Profile:
+Profile type,PDD
+Profile status,Canceled by user
+Start X,0,[cm]
+Start Y,0,[cm]
+Start Z,-16,[cm]
+Stop X,0,[cm]
+Stop Y,0,[cm]
+Stop Z,0.1,[cm]
+Couch tilt x,0.03,[°]
+Couch tilt y,-0.02,[°]
+
+Region count,1
+
+Region 1 Start,0,[µm]
+Region 1 Stop,161000,[µm]
+Step size,1000,[µm]
+Speed,320,[µm/s]
+Integration time,3125,[ms]
+
+Analysis result:
+Analysis method,PDD standard
+Calculated D10,N.C.,[%]
+Calculated D20,N.C.,[%]
+DMax,N.C.,[cm]
+Normalisation factor,N.C.,
+
+
+MEASUREMENT DATA
+
+X [cm],Y [cm],Z [cm],Normalised dose [%],
+
+Checksum:,952F4625B7AD2BF908C0E875A6BAFB37C2B02E8D81C8B98B1E7E47C0B9EA8CC3

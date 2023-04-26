@@ -1,0 +1,142 @@
+﻿HEADER
+Header Length,87
+Export file version,2.0
+
+
+Export settings:
+Normalise,Yes
+For TPS,No
+Smoothing level,None
+
+Units:
+length,[cm]
+amperage,[pA]
+
+Project:
+Project,Edge SN 81643035
+Project run number,1
+Project run note,
+
+Irradiation unit:
+Name,VCU MRIdian
+Manufacturer,ViewRay
+Model,MRIdian
+Source-isocentre distance,90,[cm]
+
+Thales:
+Control unit UID,00-3B-00-43-4B-56-50-11-20-37-30-53
+Electrometer UID,00-4E-00-36-58-4B-50-0D-20-34-34-41
+Water phantom UID,4A-B3-52-04-00-00-00-0A
+
+Field detector:
+Serial number,81643035
+Manufacturer,Sun
+Model,EDGE
+Bias voltage,0,[V]
+
+Reference detector:
+Serial number,XMC213192
+Manufacturer,Standard Imaging
+Model,A28MR Ref
+Bias voltage,-300,[V]
+
+Zeroing offsets:
+Field detector,-0.821,[pA]
+Reference detector,-0.889,[pA]
+
+Profile settings:
+Measurement mode,Continuous
+Creation time,2023-01-01T16:18:30.8950579-05:00
+SSD,85,[cm]
+Gantry angle,0,[°]
+Field size crossline,2.49,[cm]
+Field size inline,2.49,[cm]
+Beam quality,6,[MV]
+Flattening Filter,FFF
+Time to wait prior to sampling,0,[s]
+
+Profile:
+Profile type,Inline
+Profile status,Completed successfully
+Start X,0,[cm]
+Start Y,-2.5,[cm]
+Start Z,-5,[cm]
+Stop X,0,[cm]
+Stop Y,2.5,[cm]
+Stop Z,-5,[cm]
+Couch tilt x,0.06,[°]
+Couch tilt y,-0.02,[°]
+
+Region count,1
+
+Region 1 Start,0,[µm]
+Region 1 Stop,50000,[µm]
+Step size,1000,[µm]
+Speed,1050,[µm/s]
+Integration time,953,[ms]
+
+Analysis result:
+Analysis method,Max value
+Calculated centre,0.069123,[cm]
+Calculated field width,2.516576,[cm]
+Calculated penumbra left,0.352792,[cm]
+Calculated penumbra right,0.327776,[cm]
+Calculated symmetry,0.909,[%]
+Normalisation factor,0.005575,
+
+
+MEASUREMENT DATA
+
+X [cm],Y [cm],Z [cm],Normalised dose [%],
+-0.0009,-2.4499,-4.9999,-1.694,
+-0.0002,-2.3497,-4.9998,-1.789,
+-0.0001,-2.2498,-4.9998,-1.972,
+0,-2.1499,-4.9999,-2.166,
+0.0001,-2.0497,-4.9999,-2.419,
+0.0001,-1.9498,-4.9999,-2.805,
+0.0001,-1.85,-4.9999,-3.262,
+0.0002,-1.7498,-5,-4.045,
+0.0003,-1.6496,-5,-5.213,
+0.0003,-1.5497,-5,-7.563,
+0.0002,-1.4498,-5.0001,-12.306,
+0.0004,-1.3496,-5.0001,-21.487,
+0.0005,-1.2497,-5.0001,-37.035,
+0.0005,-1.1499,-5.0001,-58.410,
+0.0004,-1.0497,-5.0002,-76.039,
+0.0004,-0.9498,-5.0002,-86.832,
+0.0004,-0.8499,-5.0002,-93.006,
+0.0003,-0.7497,-5.0002,-95.876,
+0.0003,-0.6498,-5.0003,-97.535,
+0.0003,-0.5499,-5.0003,-98.312,
+0.0002,-0.4497,-5.0003,-98.754,
+0.0002,-0.3498,-5.0003,-99.105,
+0.0002,-0.2499,-5.0004,-99.353,
+0.0001,-0.1497,-5.0004,-99.655,
+0.0001,-0.0498,-5.0004,-99.787,
+0.0001,0.0501,-5.0005,-99.948,
+0,0.1502,-5.0005,-100.000,
+0,0.2504,-5.0005,-99.284,
+0,0.3503,-5.0005,-99.599,
+-0.0001,0.4502,-5.0006,-99.206,
+-0.0001,0.5504,-5.0006,-98.804,
+-0.0001,0.6503,-5.0006,-98.464,
+-0.0002,0.7502,-5.0006,-97.917,
+-0.0002,0.8503,-5.0007,-96.760,
+-0.0002,0.9502,-5.0007,-94.806,
+-0.0003,1.0501,-5.0007,-90.766,
+-0.0003,1.1503,-5.0007,-82.777,
+-0.0002,1.2502,-5.0008,-67.697,
+-0.0001,1.3501,-5.0008,-44.800,
+-0.0001,1.4502,-5.0008,-25.178,
+-0.0001,1.5502,-5.0008,-13.988,
+-0.0001,1.6502,-5.0007,-8.446,
+-0.0001,1.7503,-5.0007,-5.770,
+-0.0001,1.8503,-5.0006,-4.397,
+-0.0001,1.9503,-5.0005,-3.590,
+-0.0001,2.0504,-5.0004,-3.067,
+-0.0001,2.1504,-5.0003,-2.689,
+-0.0001,2.2504,-5.0002,-2.358,
+-0.0001,2.3505,-5.0002,-2.149,
+-0.0001,2.4499,-5.0001,-1.930,
+
+Checksum:,185C71D443309137EB751E9DEBE05F7DF9B9D2EEDDE191D253378ED3ACA8CB05

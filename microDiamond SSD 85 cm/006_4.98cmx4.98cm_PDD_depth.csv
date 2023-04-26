@@ -1,0 +1,92 @@
+﻿HEADER
+Header Length,86
+Export file version,2.0
+
+Warning,Some of the samples in this profile were acquired more than 0.250 mm away from the intended location. Max. deviation per axis X=0.276 mm, Y=0.037 mm, Z=0.001 mm.
+
+Export settings:
+Normalise,Yes
+For TPS,No
+Smoothing level,None
+
+Units:
+length,[cm]
+amperage,[pA]
+
+Project:
+Project,Micro Diamond SN 124596
+Project run number,10
+Project run note,
+
+Irradiation unit:
+Name,VCU MRIdian
+Manufacturer,ViewRay
+Model,MRIdian
+Source-isocentre distance,90,[cm]
+
+Thales:
+Control unit UID,00-3B-00-43-4B-56-50-11-20-37-30-53
+Electrometer UID,00-4E-00-36-58-4B-50-0D-20-34-34-41
+Water phantom UID,4A-B3-52-04-00-00-00-0A
+
+Field detector:
+Serial number,124596
+Manufacturer,PTW
+Model,Micro Diamond
+Bias voltage,0,[V]
+
+Reference detector:
+Serial number,XMC213192
+Manufacturer,Standard Imaging
+Model,A28MR Ref
+Bias voltage,-300,[V]
+
+Zeroing offsets:
+Field detector,-0.839,[pA]
+Reference detector,-0.897,[pA]
+
+Profile settings:
+Measurement mode,Continuous
+Creation time,2023-01-02T15:53:24.6049724-05:00
+SSD,85,[cm]
+Gantry angle,0,[°]
+Field size crossline,4.98,[cm]
+Field size inline,4.98,[cm]
+Beam quality,6,[MV]
+Flattening Filter,FFF
+Time to wait prior to sampling,0,[s]
+
+Profile:
+Profile type,PDD
+Profile status,Aborted
+Start X,0,[cm]
+Start Y,0,[cm]
+Start Z,-11,[cm]
+Stop X,0,[cm]
+Stop Y,0,[cm]
+Stop Z,0.1,[cm]
+Couch tilt x,0.06,[°]
+Couch tilt y,0.01,[°]
+
+Region count,1
+
+Region 1 Start,0,[µm]
+Region 1 Stop,111000,[µm]
+Step size,1000,[µm]
+Speed,320,[µm/s]
+Integration time,3125,[ms]
+
+Analysis result:
+Analysis method,PDD standard
+Calculated D10,N.C.,[%]
+Calculated D20,N.C.,[%]
+DMax,N.C.,[cm]
+Normalisation factor,N.C.,
+
+
+MEASUREMENT DATA
+
+X [cm],Y [cm],Z [cm],Normalised dose [%],
+0.0276,0.0037,-10.9501,329.532,
+
+Checksum:,42C43DB5C3E59F114149E1F94DE5B719A4946F29D04FE1D8BCD7857699B9A2F7

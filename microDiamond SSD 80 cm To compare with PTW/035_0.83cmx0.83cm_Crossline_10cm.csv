@@ -1,0 +1,122 @@
+﻿HEADER
+Header Length,87
+Export file version,2.0
+
+
+Export settings:
+Normalise,Yes
+For TPS,No
+Smoothing level,None
+
+Units:
+length,[cm]
+amperage,[pA]
+
+Project:
+Project,Micro Diamond SN 124596 Annual  QA
+Project run number,3
+Project run note,
+
+Irradiation unit:
+Name,VCU MRIdian
+Manufacturer,ViewRay
+Model,MRIdian
+Source-isocentre distance,90,[cm]
+
+Thales:
+Control unit UID,00-3B-00-43-4B-56-50-11-20-37-30-53
+Electrometer UID,00-4E-00-36-58-4B-50-0D-20-34-34-41
+Water phantom UID,4A-B3-52-04-00-00-00-0A
+
+Field detector:
+Serial number,124596
+Manufacturer,PTW
+Model,Micro Diamond
+Bias voltage,0,[V]
+
+Reference detector:
+Serial number,XMC213192
+Manufacturer,Standard Imaging
+Model,A28MR Ref
+Bias voltage,-300,[V]
+
+Zeroing offsets:
+Field detector,-0.795,[pA]
+Reference detector,-0.89,[pA]
+
+Profile settings:
+Measurement mode,Continuous
+Creation time,2023-01-29T14:30:28.0700966-05:00
+SSD,80,[cm]
+Gantry angle,0,[°]
+Field size crossline,0.83,[cm]
+Field size inline,0.83,[cm]
+Beam quality,6,[MV]
+Flattening Filter,FFF
+Time to wait prior to sampling,0,[s]
+
+Profile:
+Profile type,Crossline
+Profile status,Completed successfully
+Start X,-1.5,[cm]
+Start Y,0,[cm]
+Start Z,-10,[cm]
+Stop X,1.5,[cm]
+Stop Y,0,[cm]
+Stop Z,-10,[cm]
+Couch tilt x,0.03,[°]
+Couch tilt y,-0.02,[°]
+
+Region count,1
+
+Region 1 Start,0,[µm]
+Region 1 Stop,30000,[µm]
+Step size,1000,[µm]
+Speed,1050,[µm/s]
+Integration time,953,[ms]
+
+Analysis result:
+Analysis method,Max value
+Calculated centre,0.018654,[cm]
+Calculated field width,0.789210,[cm]
+Calculated penumbra left,0.278012,[cm]
+Calculated penumbra right,0.338005,[cm]
+Calculated symmetry,4.703,[%]
+Normalisation factor,0.372662,
+
+
+MEASUREMENT DATA
+
+X [cm],Y [cm],Z [cm],Normalised dose [%],
+-1.4502,-0.0011,-10.0007,0.767,
+-1.3499,-0.0011,-10.0013,0.969,
+-1.2499,-0.0011,-10.0012,1.114,
+-1.1498,-0.0011,-10.0011,1.498,
+-1.0499,-0.0011,-10.001,1.947,
+-0.9498,-0.0011,-10.001,2.641,
+-0.8499,-0.0011,-10.0009,3.706,
+-0.7499,-0.0012,-10.0008,5.448,
+-0.6498,-0.0012,-10.0007,8.743,
+-0.5499,-0.0012,-10.0007,16.337,
+-0.4499,-0.0012,-10.0006,32.022,
+-0.3498,-0.0012,-10.0005,56.358,
+-0.2499,-0.0012,-10.0004,79.805,
+-0.1499,-0.0012,-10.0004,94.048,
+-0.0499,-0.0013,-10.0003,100.000,
+0.0501,-0.0013,-10.0002,99.683,
+0.1501,-0.0013,-10.0001,94.016,
+0.25,-0.0013,-10.0001,81.442,
+0.3501,-0.0013,-10.0001,63.104,
+0.45,-0.0013,-10.0001,42.378,
+0.5501,-0.0012,-10.0001,25.116,
+0.65,-0.0012,-10.0001,13.951,
+0.7501,-0.0012,-10.0001,7.379,
+0.85,-0.0012,-10.0001,4.080,
+0.9501,-0.0012,-10.0001,2.388,
+1.05,-0.0012,-10.0001,1.679,
+1.1501,-0.0011,-10.0001,1.258,
+1.25,-0.0011,-10.0001,1.132,
+1.3501,-0.0011,-10.0001,0.883,
+1.45,-0.0011,-10.0001,0.824,
+
+Checksum:,9163C9798283072C8B659326CF857F76ABED8D6F5C9641893E3E6C1A8B0348E9
