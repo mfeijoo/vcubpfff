@@ -74,7 +74,7 @@ df['derivative10'] = df.deltadose10/df.deltax10
 
 #find inflection points
 
-inflectioncriteria =  st.slider('inflection criteria', 15, 60, 50)
+inflectioncriteria =  st.slider('inflection criteria', 15, 60, 15)
 
 inflection1 = df.loc[df.derivative > inflectioncriteria, 'aX'].max()
 inflection2 = df.loc[df.derivative < -inflectioncriteria, 'aX'].min()
