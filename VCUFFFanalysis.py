@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 #import mpld3
 import numpy as np
-#from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 from glob import glob
 import streamlit.components.v1 as components
 
@@ -50,14 +50,15 @@ df.columns = newcolumns
 
 #st.write(df.head())
 
-ax1 = df.plot.scatter(x='aX', y='dose', marker='o')
+
+#ax1 = df.plot.scatter(x='aX', y='dose', marker='o')
 
 #increase resolution interpolating 100 new points between raw data
 
 dfhd = pd.DataFrame({'aX':np.linspace(df.aX.min(), df.aX.max(), df.shape[0]*100)})
 dfn = dfhd.merge(df, how='outer', sort=True)
 dfn['ndose'] = dfn.dose.interpolate()
-dfn.plot.scatter(x='aX', y='ndose', marker='.', color='c', ax=ax1)
+#dfn.plot.scatter(x='aX', y='ndose', marker='.', color='c', ax=ax1)
 
 #calculate derivative to find inflection points from raw data
 
@@ -86,7 +87,9 @@ l20n = dfn.loc[(dfn.ndose > 19.9)&(dfn.ndose < 20.1) & (dfn.aX < 0), 'aX'].media
 l20p = dfn.loc[(dfn.ndose > 19.9)&(dfn.ndose < 20.1) & (dfn.aX > 0), 'aX'].median()
 
 #Draw the final plot
-ax5 =  df.plot.scatter(x='aX', y='dose', marker='.')
+
+fig5, ax5 = plt.subplots()
+df.plot.scatter(x='aX', y='dose', marker='.', ax=ax5)
 ax5.axvline(inflection1, color='r', linestyle='dashed', alpha=0.5)
 ax5.axvline(inflection2, color='g', linestyle='dashed', alpha=0.5)
 ax5.axvline(0, color='k', linestyle='dashed', alpha=0.5)
@@ -113,7 +116,9 @@ inflectionh = df.loc[(df.aX == inflection1)|(df.aX == inflection2), 'dose'].mean
 df['nidose'] = df.dose / inflectionh * 100
 dfn['nidose'] = dfn.ndose / inflectionh * 100
 
-ax6 = df.plot.scatter(x='aX', y='nidose', marker='.')
+fig6, ax6 = plt.subplots()
+
+df.plot.scatter(x='aX', y='nidose', marker='.', ax=ax6)
 ax6.axvline(inflection1, color='r', linestyle='dashed', alpha=0.5)
 ax6.axvline(inflection2, color='g', linestyle='dashed', alpha=0.5)
 ax6.axvline(0, color='k', linestyle='dashed', alpha=0.5)
@@ -146,8 +151,8 @@ ax5.set_xlabel('position (cm)')
 ax5.set_ylabel('Relative dose (%)')
 
 
-fig5 = ax5.get_figure()
-fig6 = ax6.get_figure()
+#fig5 = ax5.get_figure()
+#fig6 = ax6.get_figure()
 
 #fig_html = mpld3.fig_to_html(fig)
 
