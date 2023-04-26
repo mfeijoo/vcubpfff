@@ -1,0 +1,112 @@
+﻿HEADER
+Header Length,87
+Export file version,2.0
+
+
+Export settings:
+Normalise,Yes
+For TPS,No
+Smoothing level,None
+
+Units:
+length,[cm]
+amperage,[pA]
+
+Project:
+Project,Razor Nano SN 18081
+Project run number,1
+Project run note,
+
+Irradiation unit:
+Name,VCU MRIdian
+Manufacturer,ViewRay
+Model,MRIdian
+Source-isocentre distance,90,[cm]
+
+Thales:
+Control unit UID,00-3B-00-43-4B-56-50-11-20-37-30-53
+Electrometer UID,00-4E-00-36-58-4B-50-0D-20-34-34-41
+Water phantom UID,4A-B3-52-04-00-00-00-0A
+
+Field detector:
+Serial number,18081
+Manufacturer,IBA
+Model,Razor Nano
+Bias voltage,300,[V]
+
+Reference detector:
+Serial number,XMC213192
+Manufacturer,Standard Imaging
+Model,A28MR Ref
+Bias voltage,-300,[V]
+
+Zeroing offsets:
+Field detector,-0.83,[pA]
+Reference detector,-0.894,[pA]
+
+Profile settings:
+Measurement mode,Continuous
+Creation time,2022-12-26T17:06:18.1918980-05:00
+SSD,85,[cm]
+Gantry angle,0,[°]
+Field size crossline,0.83,[cm]
+Field size inline,0.83,[cm]
+Beam quality,6,[MV]
+Flattening Filter,FFF
+Time to wait prior to sampling,0,[s]
+
+Profile:
+Profile type,Inline
+Profile status,Completed successfully
+Start X,0,[cm]
+Start Y,-1,[cm]
+Start Z,-5,[cm]
+Stop X,0,[cm]
+Stop Y,1,[cm]
+Stop Z,-5,[cm]
+Couch tilt x,0.08,[°]
+Couch tilt y,0.01,[°]
+
+Region count,1
+
+Region 1 Start,0,[µm]
+Region 1 Stop,20000,[µm]
+Step size,1000,[µm]
+Speed,1050,[µm/s]
+Integration time,953,[ms]
+
+Analysis result:
+Analysis method,Max value
+Calculated centre,0.069655,[cm]
+Calculated field width,0.860135,[cm]
+Calculated penumbra left,0.323456,[cm]
+Calculated penumbra right,0.273129,[cm]
+Calculated symmetry,1.761,[%]
+Normalisation factor,2.239258,
+
+
+MEASUREMENT DATA
+
+X [cm],Y [cm],Z [cm],Normalised dose [%],
+0.001,-0.9496,-4.9998,-2.072,
+0.0007,-0.8497,-4.9995,-3.164,
+0.0007,-0.7498,-4.9995,-4.857,
+0.0006,-0.6499,-4.9995,-8.981,
+0.0006,-0.5498,-4.9995,-16.899,
+0.0006,-0.4496,-4.9996,-31.273,
+0.0005,-0.3497,-4.9996,-52.249,
+0.0005,-0.2498,-4.9996,-73.277,
+0.0005,-0.1496,-4.9997,-88.223,
+0.0004,-0.0497,-4.9997,-96.296,
+0.0004,0.0502,-4.9997,-100.000,
+0.0004,0.1503,-4.9997,-99.119,
+0.0003,0.2502,-4.9998,-94.641,
+0.0003,0.3501,-4.9998,-82.625,
+0.0003,0.4503,-4.9998,-62.421,
+0.0002,0.5502,-4.9998,-37.313,
+0.0002,0.6501,-4.9999,-17.212,
+0.0002,0.7502,-4.9999,-5.398,
+0.0001,0.8504,-4.9999,0.420,
+0.0001,0.9503,-4.9999,2.834,
+
+Checksum:,0301FC321D89E54D5B0F78B4FC7FB8BF071D4A5A9B0B41480EA431824C2138D3
