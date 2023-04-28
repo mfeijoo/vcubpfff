@@ -181,7 +181,7 @@ fig1.add_annotation(x=(slopepdf.aX.max()+slopepdf.aX.min())/2+2,
                    showarrow=False)
 fig1.add_vline(x=inflection3, line_dash='dash', line_color='DarkGreen')
 fig1.add_vline(x=inflection4, line_dash='dash', line_color='DarkRed')
-fig1.add_annotation(x=0,
+fig1.add_annotation(x=0.2,
                     y=95,
                     text='peak=%.2f%%'%percentagepeak,
                    font_color='red',
