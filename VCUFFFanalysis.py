@@ -88,6 +88,8 @@ inflection4 = df.loc[df.derivative10 < -inflection2criteria, 'aX'].min()
 
 #Find Pick Value
 peakvalue = df.loc[(df.aX > inflection3)&(df.aX < inflection4), 'dose'].sum()
+totalvalue =  df.loc[:, 'dose'].sum()
+percentagepeak = peakvalue / totalvalue * 100
 
 #Find field size before normalization
 edgen = dfn.loc[dfn.ndose>50, 'aX'].min()
@@ -181,7 +183,7 @@ fig1.add_vline(x=inflection3, line_dash='dash', line_color='DarkGreen')
 fig1.add_vline(x=inflection4, line_dash='dash', line_color='DarkRed')
 fig1.add_annotation(x=0,
                     y=95,
-                    text='peak=%.2f'%peakvalue,
+                    text='peak=%.2f%%'%percentagepeak,
                    font_color='red',
                    showarrow=False)
 fig1.add_annotation(x=0,
