@@ -5,6 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from glob import glob
 import streamlit.components.v1 as components
+from io import StringIO
 
 def R2 (x, y):
     coeff, cov = np.polyfit(x,y,1, cov=True)
@@ -38,14 +39,27 @@ listoffiles = list(set(glob('%s/*.csv' %directory1)) - set(glob('%s/*PDD*.csv' %
 
 filenow =  st.selectbox('Select File', listoffiles)
 
-if 'Crossline' in filenow:
-    newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
-else:
-    newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
+uploaded_file = st.file_uploader('...Or upload a .csv file with 89 lines in header', type=['csv'])
 
-df = pd.read_csv(filenow, skiprows=89, skipfooter=2, engine='python')
+if uploaded_file is not None:
+    if 'Crossline' in uploaded_file.name:
+        newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
+    else:
+        newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
+
+    df = pd.read_csv(uploaded_file, skiprows=89, skipfooter=2, engine='python')
+    #st.write(dfn.head())
+else:
+    if 'Crossline' in filenow:
+        newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
+    else:
+        newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
+
+    df = pd.read_csv(filenow, skiprows=89, skipfooter=2, engine='python')
 
 df.columns = newcolumns
+
+
 
 #increase resolution interpolating 100 new points between raw data
 
