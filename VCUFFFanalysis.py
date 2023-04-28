@@ -185,6 +185,7 @@ fig1.add_annotation(x=0,
                     y=95,
                     text='peak=%.2f%%'%percentagepeak,
                    font_color='red',
+                   font_size=12,
                    showarrow=False)
 fig1.add_annotation(x=0,
                     y=60,
