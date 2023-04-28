@@ -39,7 +39,7 @@ listoffiles = list(set(glob('%s/*.csv' %directory1)) - set(glob('%s/*PDD*.csv' %
 
 filenow =  st.selectbox('Select File', listoffiles)
 
-uploaded_file = st.file_uploader('...Or upload a .csv file with 89 lines in header', type=['csv'])
+uploaded_file = st.file_uploader('...Or upload a .csv file with 89 lines in header, Lap format', type=['csv'])
 
 if uploaded_file is not None:
     if 'Crossline' in uploaded_file.name:
@@ -48,7 +48,6 @@ if uploaded_file is not None:
         newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
 
     df = pd.read_csv(uploaded_file, skiprows=89, skipfooter=2, engine='python')
-    #st.write(dfn.head())
 else:
     if 'Crossline' in filenow:
         newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
