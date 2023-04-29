@@ -79,11 +79,7 @@ df['deltax'] = df.aX.diff()
 df['deltadose'] = df.dose.diff()
 df['derivative'] = df.deltadose / df.deltax
 
-#calculated derivative after 10 points
 
-df['deltax10'] = df.aX.diff(10)
-df['deltadose10'] = df.dose.diff(10)
-df['derivative10'] = df.deltadose10/df.deltax10
 
 #find inflection points
 
@@ -94,10 +90,18 @@ inflection2 = df.loc[df.derivative < -inflection1criteria, 'aX'].min()
 
 #find second inflection points
 
-inflection2criteria = st.slider('inflection2 criteria', 1, 5, 2)
+inflection2criteria1 = st.slider('inflection2 criteria1', 1,10,10)
 
-inflection3 = df.loc[df.derivative10 > inflection2criteria, 'aX'].max()
-inflection4 = df.loc[df.derivative10 < -inflection2criteria, 'aX'].min()
+#calculated derivative after 10 points
+
+df['deltax10'] = df.aX.diff(inflection2criteria1)
+df['deltadose10'] = df.dose.diff(inflection2criteria1)
+df['derivative10'] = df.deltadose10/df.deltax10
+
+inflection2criteria2 = st.slider('inflection2 criteria2', 1, 5, 2)
+
+inflection3 = df.loc[df.derivative10 > inflection2criteria2, 'aX'].max()
+inflection4 = df.loc[df.derivative10 < -inflection2criteria2, 'aX'].min()
 
 #Find Pick Value
 peakvalue = df.loc[(df.aX > inflection3)&(df.aX < inflection4), 'dose'].sum()
