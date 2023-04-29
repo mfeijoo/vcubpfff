@@ -97,6 +97,8 @@ hdline = go.Scatter(mode='markers',
 
 fig0 = px.scatter(dfn, x='aX', y='dose', title='Rawdata to check quality')
 fig0.add_traces(hdline)
+fig0.update_layout(xaxis_title='position (cm)',
+                   yaxis_title = 'relative dose (%)')
 
 st.plotly_chart(fig0)
 
@@ -258,6 +260,8 @@ if not PDD:
                         text='penumbra = %.2fcm' %(lni20p - lni80p),
                     font_color='red',
                     showarrow=False)
+    fig1.update_layout(xaxis_title='position (cm)',
+                        yaxis_title = 'relative dose (%)')
 
 
     #fig2
@@ -292,6 +296,8 @@ if not PDD:
                     font_color='BlueViolet',
                     font_size=15,
                     showarrow=False)
+    fig2.update_layout(xaxis_title='position (cm)',
+                   yaxis_title = 'relative dose (%)')
 
     st.plotly_chart(fig1)
     st.plotly_chart(fig2)
