@@ -39,7 +39,7 @@ listoffiles = glob('%s/*.csv' %directory1)
 
 filenow =  st.selectbox('Select File', listoffiles)
 
-uploaded_file = st.file_uploader('...Or upload a .csv file with 89 lines in header, Lap format', type=['csv'])
+uploaded_file = st.file_uploader('...Or upload a .csv file with Lap format', type=['csv'])
 
 
 if uploaded_file is not None:
