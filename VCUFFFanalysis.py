@@ -27,7 +27,7 @@ def R2 (x, y):
     #stotext = 'y = %.4f x + %.4f \n$R^2 = %.4f$' %(coeff[0], coeff[1], R2)
     return slopeline, coeff[0]
 
-st.title("VCU & Blue Physics FFF profiles analysis")
+st.title("VCU & Blue Physics FFF profiles and PDD's analysis")
 
 listofdirectories = glob('*/')
 
