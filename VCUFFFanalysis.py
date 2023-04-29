@@ -90,7 +90,7 @@ inflection2 = df.loc[df.derivative < -inflection1criteria, 'aX'].min()
 
 #find second inflection points
 
-inflection2criteria1 = st.slider('inflection2 criteria1', 1,10,10)
+inflection2criteria1 = st.slider('inflection2 criteria1', 1,10,3)
 
 #calculated derivative after 10 points
 
