@@ -77,6 +77,9 @@ else:
 
 df.columns = newcolumns
 
+#move all dose to positive
+df['dose'] = np.abs(df.dose)
+
 
 
 #increase resolution interpolating 100 new points between raw data
