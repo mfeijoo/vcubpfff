@@ -80,8 +80,6 @@ df.columns = newcolumns
 #move all dose to positive
 df['dose'] = np.abs(df.dose)
 
-
-
 #increase resolution interpolating 100 new points between raw data
 
 dfhd = pd.DataFrame({'aX':np.linspace(df.aX.min(), df.aX.max(), df.shape[0]*100)})
@@ -306,4 +304,51 @@ if not PDD:
     st.plotly_chart(fig2)
 
 else: #if PDD
-    pass
+    #check if negative values
+    #st.write(df.loc[df.dose == df.dose.max(),'aX'].item())
+    if df.loc[df.dose == df.dose.max(),'aX'].item()<0:
+        df['aX'] = df.aX * -1
+        dfn['aX'] = dfn.aX * -1
+    
+    nhdline = go.Scatter(mode='markers', 
+                    x=dfn.aX, 
+                    y=dfn.ndose, 
+                    marker=dict(color='cyan', size=2, opacity=0.5), 
+                    showlegend=False,
+                    name='interpolation')
+    
+    #Find dmax
+    dmax = dfn.loc[dfn.ndose == dfn.ndose.max(), 'aX'].item()
+
+    #Find dose surface
+    dsurface = dfn.loc[dfn.aX > 0, 'ndose'].iloc[-1]
+
+    #Find buildup area
+    areabuildupdf = dfn.loc[(dfn.aX > 0) & (dfn.aX <= dmax), ['aX', 'ndose']]
+
+    #fig1
+    fig1 = px.scatter(df, x='aX', y='dose')
+    fig1.add_traces(nhdline)
+    fig1.add_vline(x=dmax, line_dash='dash', line_color='green')
+    fig1.add_annotation(x=dmax+2, 
+                        y=100, 
+                        text='dmax=%.2fcm' % dmax, 
+                        font=dict(color='green'), 
+                        showarrow=False)
+    fig1.add_vline(x=0, line_dash='dash', line_color='black')
+    fig1.add_annotation(x=0,
+                        y=dsurface,
+                        text='dose surface=%.2f%%' % dsurface,
+                        font=dict(color='red'),
+                        showarrow=False)
+    fig1.add_traces(px.area(areabuildupdf,
+                            x='aX',
+                            y='ndose',
+                            color_discrete_sequence=['LIghtGreen'],
+                            markers=False).data)
+
+    st.plotly_chart(fig1)
+
+
+
+    
