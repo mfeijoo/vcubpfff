@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 from glob import glob
 import streamlit.components.v1 as components
 from io import StringIO
+import boto3
 
 def R2 (x, y):
     coeff, cov = np.polyfit(x,y,1, cov=True)
@@ -29,13 +30,26 @@ def R2 (x, y):
 
 st.title("VCU & Blue Physics FFF profiles and PDD's analysis")
 
-listofdirectories = glob('*/')
+s3 = boto3.client('s3',
+                  aws_access_key_id='AKIASRNRXQANQ6YKQ2YE',
+                  aws_secret_access_key='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')
+
+response = s3.list_objects_v2(Bucket='bluephysicsaws', Delimiter='/')
+
+listofdirectories = []
+
+for common_prefix in response.get('CommonPrefixes', []):
+        # Extract the folder name from the CommonPrefixes
+        folder_name = common_prefix['Prefix'].rstrip('/')
+        listofdirectories.append(folder_name)
 
 directory1 = st.selectbox('Select Directory', listofdirectories)
 
+response2 = s3.list_objects_v2(Bucket='bluephysicsaws', Prefix=directory1)
+
 #list of files in directory except
 
-listoffiles = glob('%s/*.csv' %directory1)
+listoffiles = [file['Key'] for file in response2.get('Contents', [])]
 
 filenow =  st.selectbox('Select File', listoffiles)
 
@@ -325,6 +339,9 @@ else: #if PDD
 
     #Find buildup area
     areabuildupdf = dfn.loc[(dfn.aX > 0) & (dfn.aX <= dmax), ['aX', 'ndose']]
+
+    #Find dose at 10 cm
+    
 
     #fig1
     fig1 = px.scatter(df, x='aX', y='dose')
