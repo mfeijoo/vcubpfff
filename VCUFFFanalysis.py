@@ -30,9 +30,7 @@ def R2 (x, y):
 
 st.title("VCU & Blue Physics FFF profiles and PDD's analysis")
 
-s3 = boto3.client('s3',
-                  aws_access_key_id='AKIASRNRXQANQ6YKQ2YE',
-                  aws_secret_access_key='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')
+s3 = boto3.client('s3')
 
 response = s3.list_objects_v2(Bucket='bluephysicsaws', Delimiter='/')
 
