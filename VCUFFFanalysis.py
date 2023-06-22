@@ -55,6 +55,7 @@ filenow =  st.selectbox('Select File', listoffiles)
 
 path = 's3://bluephysicsaws/%s' %(filenow)
 
+st.write (path)
 
 if 'Crossline' in filenow:
         newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
@@ -70,7 +71,7 @@ else:
         PDD = True
         rows_to_skip = 88
 
-df = pd.read_csv(path, skiprows=89, skipfooter=2, engine='python')
+df = pd.read_csv(path, skiprows=rows_to_skip, skipfooter=2, engine='python')
 
 # '''uploaded_file = st.file_uploader('...Or upload a .csv file with Lap format', type=['csv'])
 
