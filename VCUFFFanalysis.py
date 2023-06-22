@@ -3,11 +3,9 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-from glob import glob
 import streamlit.components.v1 as components
 from io import StringIO
 import boto3
-from st_files_connection import FilesConnection
 
 def R2 (x, y):
     coeff, cov = np.polyfit(x,y,1, cov=True)
@@ -54,7 +52,7 @@ filenow =  st.selectbox('Select File', listoffiles)
 
 path = 's3://bluephysicsaws/%s' %(filenow)
 
-st.write (path)
+#st.write (path)
 
 if 'Crossline' in filenow:
         newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
@@ -70,11 +68,11 @@ else:
         PDD = True
         rows_to_skip = 88
 
-conn = st.experimental_connection('s3', type=FilesConnection)
-df0 = conn.read(filenow, input_format='csv', ttl=600)
-st.write("new configuration")
-st.write(df0)
-#df = pd.read_csv(path, skiprows=rows_to_skip, skipfooter=2, engine='python')
+#conn = st.experimental_connection('s3', type=FilesConnection)
+#df0 = conn.read(filenow, input_format='csv', ttl=600)
+#st.write("new configuration")
+#st.write(df0)
+df = pd.read_csv(path, skiprows=rows_to_skip, skipfooter=2, engine='python')
 
 # '''uploaded_file = st.file_uploader('...Or upload a .csv file with Lap format', type=['csv'])
 
