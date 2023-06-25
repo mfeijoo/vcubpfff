@@ -52,63 +52,40 @@ filenow =  st.selectbox('Select File', listoffiles)
 
 path = 's3://bluephysicsaws/%s' %(filenow)
 
-#st.write (path)
+uploaded_file = st.file_uploader('...Or upload a .csv file with Lap format', type=['csv'])
 
-if 'Crossline' in filenow:
-        newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
-        PDD = False
-        rows_to_skip = 89
+if uploaded_file is not None:
+     if 'Crossline' in uploaded_file.name:
+         newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
+         PDD = False
+         rows_to_skip = 89
+     else:
+         if 'Inline' in uploaded_file.name:
+             newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
+             PDD = False
+             rows_to_skip = 89
+         else:
+             newcolumns = ['X', 'Y', 'aX', 'dose', 'dummy']
+             PDD = True
+             rows_to_skip = 88
+
+     df = pd.read_csv(uploaded_file, skiprows=rows_to_skip, skipfooter=2, engine='python')
 else:
-    if 'Inline' in filenow:
-        newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
-        PDD = False
-        rows_to_skip = 89
-    else:
-        newcolumns = ['X', 'Y', 'aX', 'dose', 'dummy']
-        PDD = True
-        rows_to_skip = 88
+     if 'Crossline' in filenow:
+         newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
+         PDD = False
+         rows_to_skip = 89
+     else:
+         if 'Inline' in filenow:
+             newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
+             PDD = False
+             rows_to_skip = 89
+         else:
+             newcolumns = ['X', 'Y', 'aX', 'dose', 'dummy']
+             PDD = True
+             rows_to_skip = 88
 
-#conn = st.experimental_connection('s3', type=FilesConnection)
-#df0 = conn.read(filenow, input_format='csv', ttl=600)
-#st.write("new configuration")
-#st.write(df0)
-df = pd.read_csv(path, skiprows=rows_to_skip, skipfooter=2, engine='python')
-
-# '''uploaded_file = st.file_uploader('...Or upload a .csv file with Lap format', type=['csv'])
-
-
-# if uploaded_file is not None:
-#     if 'Crossline' in uploaded_file.name:
-#         newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
-#         PDD = False
-#         rows_to_skip = 89
-#     else:
-#         if 'Inline' in uploaded_file.name:
-#             newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
-#             PDD = False
-#             rows_to_skip = 89
-#         else:
-#             newcolumns = ['X', 'Y', 'aX', 'dose', 'dummy']
-#             PDD = True
-#             rows_to_skip = 88
-
-#     df = pd.read_csv(uploaded_file, skiprows=rows_to_skip, skipfooter=2, engine='python')
-# else:
-#     if 'Crossline' in filenow:
-#         newcolumns = ['aX', 'Y', 'Z', 'dose', 'dummy']
-#         PDD = False
-#         rows_to_skip = 89
-#     else:
-#         if 'Inline' in filenow:
-#             newcolumns = ['X', 'aX', 'Z', 'dose', 'dummy']
-#             PDD = False
-#             rows_to_skip = 89
-#         else:
-#             newcolumns = ['X', 'Y', 'aX', 'dose', 'dummy']
-#             PDD = True
-#             rows_to_skip = 88
-
-#     df = pd.read_csv(filenow, skiprows=89, skipfooter=2, engine='python')'''
+     df = pd.read_csv(path, skiprows=89, skipfooter=2, engine='python')
 
 df.columns = newcolumns
 
